@@ -5,13 +5,14 @@ In this lab you will generate [Kubernetes configuration files](https://kubernete
 ## Client Authentication Configs
 
 In this section you will generate kubeconfig files for the `controller manager`, `kube-proxy`, `scheduler` clients and the `admin` user.
+My note: For 'kube-proxy' we will use in our case LB ip address. But for `controller manager`, `scheduler` and the `admin` user we will use loopback ip address. i.e. 127.0.0.1
 
 ### Kubernetes Public IP Address
 
-Each kubeconfig requires a Kubernetes API Server to connect to. To support high availability the IP address assigned to the load balancer will be used. In our case it is `192.168.5.30`
+Each kubeconfig requires a Kubernetes API Server to connect to. To support high availability the IP address assigned to the load balancer will be used. In our case it is `192.168.56.30`
 
 ```
-LOADBALANCER_ADDRESS=192.168.5.30
+LOADBALANCER_ADDRESS=192.168.56.30
 ```
 
 ### The kube-proxy Kubernetes Configuration File
